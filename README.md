@@ -180,3 +180,10 @@ true
 - O campo `expirationDate` deve estar em formato ISO-8601 com timezone/sem timezone conforme aceito pela API (exemplo fornecido sem timezone: `2026-01-31T23:59:59`).
 - `discountValue` é um número decimal (ex: 0.65 representa 65% ou dependendo da interpretação da aplicação — confirme a unidade no código).
 - A exclusão é do tipo "soft delete" (campo `deleted` marcado como `true`) — registros não são removidos fisicamente.
+
+## Swagger / OpenAPI
+
+A documentação interativa das APIs é gerada automaticamente pelo Springdoc OpenAPI e está disponível quando a aplicação está em execução.
+
+- Swagger UI (interface web): http://localhost:8080/swagger-ui/index.html
+- OpenAPI JSON (spec): http://localhost:8080/v3/api-docs
