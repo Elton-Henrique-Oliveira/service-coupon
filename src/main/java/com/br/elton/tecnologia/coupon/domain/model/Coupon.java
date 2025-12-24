@@ -83,11 +83,12 @@ public class Coupon {
     }
 
     public void validateForCreation() {
-        if (this.code == null) {
+        String sanitizedCode = sanitizeCode(this.code);
+        if (sanitizedCode == null) {
             throw new IllegalArgumentException("O código do cupom deve conter exatamente 6 caracteres alfanuméricos");
         }
 
-        if (this.code.length() != 6) {
+        if (sanitizedCode.length() != 6) {
             throw new IllegalArgumentException("O código do cupom deve conter exatamente 6 caracteres alfanuméricos");
         }
 
