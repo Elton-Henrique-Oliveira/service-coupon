@@ -42,9 +42,4 @@ public interface CouponRepository extends JpaRepository<Coupon, UUID> {
     @Transactional
     @Query("update Coupon c set c.deleted = true where c.id = :id and c.deleted = false")
     int softDeleteById(@Param("id") UUID id);
-
-    @Modifying
-    @Transactional
-    @Query(value = "UPDATE coupon SET deleted = true WHERE id = :id AND deleted = false", nativeQuery = true)
-    int softDeleteByIdNative(@Param("id") UUID id);
 }
