@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  coupon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: coupon
+    environment:
+      SERVER_PORT: "8080"
+      JAVA_TOOL_OPTIONS: >-
+        -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -XX:InitialRAMPercentage=50.0 -XX:+AlwaysActAsServerClassMachine
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+    driver: local
